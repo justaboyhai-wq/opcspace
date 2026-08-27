@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>和盛大厦双端原型</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 32px; background: #f4f7f6; color: #17352d; font-family: "Microsoft YaHei", system-ui, sans-serif; }
+    main { width: min(820px, 100%); }
+    header { margin-bottom: 24px; }
+    h1 { margin: 0; color: #06473b; font-size: 32px; }
+    header p { margin: 9px 0 0; color: #75857f; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    a { display: block; min-height: 220px; padding: 26px; border: 1px solid #dfe8e4; border-radius: 18px; background: white; color: inherit; text-decoration: none; box-shadow: 0 12px 36px rgba(25, 62, 52, .08); transition: transform .18s, box-shadow .18s; }
+    a:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(25, 62, 52, .14); }
+    .tag { display: inline-block; padding: 5px 9px; border-radius: 999px; background: #edf5f2; color: #0b5b4a; font-size: 12px; font-weight: 700; }
+    h2 { margin: 28px 0 8px; font-size: 24px; }
+    a p { margin: 0; color: #71807b; line-height: 1.7; }
+    strong { display: inline-block; margin-top: 24px; color: #0b5b4a; }
+    footer { margin-top: 20px; color: #8a9692; font-size: 13px; }
+    @media (max-width: 640px) { .grid { grid-template-columns: 1fr; } body { padding: 20px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>和盛大厦双端交互原型</h1><p>请选择要查看的原型，两个版本可同时打开。</p></header>
+    <section class="grid">
+      <a href="http://localhost:18081/" target="_blank" rel="noreferrer">
+        <span class="tag">iPhone / Pixel</span><h2>小程序端</h2><p>访客、报修、账单、空间、活动、AI 管家等移动端功能。</p><strong>打开小程序原型 →</strong>
+      </a>
+      <a href="http://localhost:18082/" target="_blank" rel="noreferrer">
+        <span class="tag">Desktop Web</span><h2>园区管理端</h2><p>运营总览、工单、企业、空间、账单、活动及系统管理功能。</p><strong>打开 Web 管理端 →</strong>
+      </a>
+    </section>
+    <footer>原型数据均为演示数据；关闭时请双击“关闭原型服务-STOP.bat”。</footer>
+  </main>
+</body>
+</html>
+
