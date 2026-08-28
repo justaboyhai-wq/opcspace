@@ -98,7 +98,7 @@
       "result": "success-after-native-migration",
       "artifact": "services/backend/ruoyi-admin/target/ruoyi-admin.jar",
       "testScope": "tests-skipped",
-      "verifiedAt": "2026-08-28T11:08:38Z",
+      "verifiedAt": "2026-08-28T11:11:22Z",
       "note": "Executed after directory migration, native-source conversion and configuration hardening; tests were intentionally skipped."
     },
     "mobileBuild": {
