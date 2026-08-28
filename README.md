@@ -4,6 +4,17 @@ OPCSpace 是“和盛大厦”双端原型的产品化工作区。根仓负责�
 
 本仓库是原生 Git 工程：移动端与后端源码均由根仓直接管理，不使用 Git 子模块，也不携带上游提交历史。两套底座以 MIT 许可的源码快照导入，来源、快照和许可证见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
+公开仓库：<https://github.com/justaboyhai-wq/opcspace>
+
+## 产品文档
+
+- [OPCSpace 园区服务一体化平台 PRD v0.1](docs/product/OPCSpace-PRD-v0.1.md)
+- [业务流程与动作契约 v0.1](docs/product/OPCSpace-BUSINESS-FLOWS-v0.1.md)
+- [PRD 待确认事项](docs/product/OPCSpace-PENDING-TOPICS.md)
+- [功能追踪矩阵](docs/traceability/feature-matrix.md)
+
+PRD 中的“原型证据”只表示冻结原型存在相应页面或交互，不代表业务已经实现。当前首期研发范围收敛为身份与主数据、报修工单黄金纵切、基础消息和审计。
+
 ## 当前目录基线
 
 | 路径 | 作用 | 当前状态 |
@@ -23,7 +34,7 @@ OPCSpace 是“和盛大厦”双端原型的产品化工作区。根仓负责�
 ## 获取与校验工作区
 
 ```powershell
-git clone <opcspace-repository-url>
+git clone https://github.com/justaboyhai-wq/opcspace.git
 Set-Location opcspace
 .\scripts\verify-baseline.ps1
 ```
@@ -55,7 +66,7 @@ Set-Location opcspace
 - 上游框架升级单独提交，不与业务功能混合，升级后执行全量契约、权限和数据库回归。
 - 对上游代码的后续同步必须独立评审，并保留许可证、NOTICE 和版权来源。
 
-本次目录迁移不切换子模块分支或提交。后端仍是 Spring Boot 4.1.0 基线，移动端仍是 Vue 2/Vuex 基线；推荐分支只作为后续独立基线变更候选。
+本次目录迁移不切换已导入源码快照的上游分支。后端仍是 Spring Boot 4.1.0 基线，移动端仍是 Vue 2/Vuex 基线；推荐分支只作为后续独立基线变更候选。
 
 ## 本地 PRD 演示
 

@@ -84,7 +84,7 @@ opcspace
 - 本机可用 Node.js 24.13.0 与 npm 11.6.2，但没有宿主机 JDK 与 Maven；已于 2026-08-28 使用 `maven:3.9.11-eclipse-temurin-17` 容器，在当前 `services/backend` 路径执行 `-DskipTests package` 并获得 `BUILD SUCCESS`。测试仍被明确跳过。
 - `apps/mini-app` 没有根 `package.json`，当前仍依赖 HBuilderX，尚不能进入标准 CLI/CI 构建流水线。
 - `apps/admin-web` 正式源码尚未进入工作区。
-- 正式产品 GitHub 远端尚待创建；它将承载根仓的原生源码提交。
+- 正式产品 GitHub 远端已创建并公开：<https://github.com/justaboyhai-wq/opcspace>；根仓 `master` 追踪 `origin/master`。
 - Druid 控制台、Swagger UI 和 OpenAPI 文档默认关闭；仅能由受控环境变量显式开启。Druid 默认只允许 `127.0.0.1`，生产环境还必须注入账号、密码和允许网段。
 - 后端 Spring Boot 3/4 与移动端 Vue 2/3 的正式分支选择仍需独立基线提交。
 
