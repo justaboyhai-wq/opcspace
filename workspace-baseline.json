@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "product": {
     "name": "opcspace",
     "version": "0.1.0-alpha.0",
@@ -7,8 +7,8 @@
   },
   "layout": {
     "approvedDirectories": [
-      "prd-demo/admin",
-      "prd-demo/mini",
+      "prototypes/admin",
+      "prototypes/mini",
       "apps/admin-web",
       "apps/mini-app",
       "services/backend",
@@ -18,13 +18,40 @@
       "database/seeds",
       "deploy/compose",
       "deploy/environments",
-      "deploy/release"
+      "deploy/release",
+      "docs/prd",
+      "docs/architecture",
+      "docs/plans",
+      "docs/traceability",
+      "docs/codebase"
     ],
     "legacyRootDirectories": [
       "mini-program",
       "web-admin",
       "RuoYi-App",
-      "RuoYi-Vue"
+      "RuoYi-Vue",
+      "prd-demo",
+      "docs/product",
+      "docs/superpowers",
+      ".planning",
+      "tools"
+    ],
+    "forbiddenRootFiles": [
+      "README.txt",
+      "使用说明.txt",
+      "打开入口.html",
+      "START-ALL.bat",
+      "START-MINI.bat",
+      "START-WEB.bat",
+      "STOP.bat",
+      "start-all.command",
+      "stop.command",
+      "启动全部-START-ALL.bat",
+      "启动小程序-START-MINI.bat",
+      "启动管理端-START-WEB.bat",
+      "启动全部.command",
+      "关闭原型服务-STOP.bat",
+      "关闭原型服务.command"
     ]
   },
   "architecture": {
@@ -87,7 +114,7 @@
       "name": "admin-web-source",
       "path": "apps/admin-web",
       "recommendedStack": "Vue 3, TypeScript, Vite, Pinia, Element Plus",
-      "reason": "The approved directory contains only a placeholder README; the frozen prototype is under prd-demo/admin."
+      "reason": "The approved directory contains only a placeholder README; the frozen prototype is under prototypes/admin."
     }
   ],
   "verification": {

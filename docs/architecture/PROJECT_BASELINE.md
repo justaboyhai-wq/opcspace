@@ -8,7 +8,7 @@
 
 ```text
 opcspace
-|-- prd-demo/
+|-- prototypes/
 |   |-- admin/                  # 冻结管理端原型
 |   `-- mini/                   # 冻结小程序原型
 |-- apps/

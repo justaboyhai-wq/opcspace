@@ -70,7 +70,7 @@ opcspace/
 
 - `prototypes/admin` 与 `prototypes/mini` 是冻结构建产物，禁止继续作为正式源码开发。
 - `prototypes/index.html` 使用 `./admin/` 与 `./mini/` 相对链接。
-- 小程序原型入口中的静态资源路径改为相对路径，确保从 `prototypes/` 作为站点根目录时可以加载。
+- 小程序原型入口及冻结 bundle 中的静态资源路径改为相对路径，确保从 `prototypes/` 作为站点根目录时可以加载；只归一化路径，不改变页面逻辑。
 - 仓库不再维护平台专用的一键启动/停止脚本。需要预览时使用任意标准静态 HTTP 服务；是否发布 GitHub Pages 不在本次范围。
 
 ## 6. 文档一致性
@@ -94,4 +94,3 @@ opcspace/
 5. `scripts/verify-baseline.ps1` 在新路径下通过。
 6. 当前未提交的四份 v0.2 产品文档及 README、追踪矩阵修改完整保留。
 7. 最终提交推送到 `origin/master`，并核对本地与远端提交一致。
-

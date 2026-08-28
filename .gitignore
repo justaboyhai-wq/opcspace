@@ -1,5 +1,4 @@
-# Local prototype runtime state
-tools/*.pid
+# Local agent design scratch state
 .superpowers/
 
 # Local environment and credentials

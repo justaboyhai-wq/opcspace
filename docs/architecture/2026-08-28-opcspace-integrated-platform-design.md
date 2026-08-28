@@ -9,7 +9,7 @@
 ## 1. 已确认的产品决策
 
 1. 首版只服务和盛大厦，但核心业务表携带 `project_id`，为同一物业下未来多园区扩展保留边界。
-2. 当前 `mini-program/` 和 `web-admin/` 仅作为产品原型和验收证据，不作为正式源码继续开发。
+2. 当前 `prototypes/mini/` 和 `prototypes/admin/` 仅作为产品原型和验收证据，不作为正式源码继续开发。
 3. PRD 静态演示环境只保留在本地根仓，不部署到云端，也不连接正式 API。
 4. 正式管理端采用若依规范主导的混合模式：标准台账直接生成，领域对象生成后增强，复杂运营页面按原型定制。
 5. 管理端前端属于若依体系，但与 Java 后端物理分离、独立构建和发布。
@@ -25,8 +25,8 @@
 
 ```text
 opcspace/
-|-- index.html                         # 本地 PRD 演示入口
-|-- prd-demo/
+|-- prototypes/
+|   |-- index.html                     # 冻结双端原型统一入口
 |   |-- admin/                         # 冻结管理端原型
 |   `-- mini/                          # 冻结小程序手机壳原型
 |-- apps/
@@ -218,7 +218,7 @@ submitted
 | `apps/admin-web` | 带内容哈希的静态资源 | 云对象存储与 CDN |
 | `apps/mini-app` | 微信小程序上传制品 | 微信小程序平台 |
 | `services/backend` | Java 容器镜像 | 云服务器容器运行环境 |
-| `prd-demo` | 本地静态文件 | 不部署 |
+| `prototypes` | 本地静态文件 | 不部署 |
 
 ### 9.2 基础设施
 
@@ -252,20 +252,16 @@ submitted
 
 根仓标签是对外产品版本。子项目可独立部署和回滚，但任何生产组合都必须对应一个根仓发布清单。
 
-## 11. 当前目录迁移顺序
+## 11. 当前目录迁移状态
 
-1. 将当前 `mini-program/` 移动到 `prd-demo/mini/`。
-2. 将当前 `web-admin/` 移动到 `prd-demo/admin/`。
-3. 保留根 `index.html` 作为本地 PRD 演示入口，并更新资源路径。
-4. 将 RuoYi-App 源码快照导入 `apps/mini-app/`，后续建立 Vue 3 产品基线。
-5. 将 RuoYi-Vue 源码快照导入 `services/backend/`，后续建立 Spring Boot 3 产品基线。
-6. 新增 `apps/admin-web/` 若依 Vue 3 TypeScript 工程。
-7. 更新 `workspace-baseline.json` 和基线校验脚本，验证无嵌套 Git 元数据。
-8. 建立 `contracts/`、`database/` 和 `deploy/` 目录。
-9. 验证本地演示入口、三个正式工程构建和根仓源码追踪。
-10. 开始身份、主数据和报修工单纵切。
+1. 冻结管理端和小程序原型已经归档到 `prototypes/admin/` 与 `prototypes/mini/`。
+2. `prototypes/index.html` 已作为统一入口，根目录不再保留原型交付启动器。
+3. RuoYi-App 与 RuoYi-Vue 已作为普通源码导入；正式管理端仍是占位边界。
+4. 来源、许可证和基线锁定文件已经纳入根仓。
+5. `contracts/`、`database/` 与 `deploy/` 边界已建立，但目前仍以 README 占位为主。
+6. 后端容器构建和安全基线已有历史验证，产品业务闭环仍待实施。
 
-迁移期间不删除原型内容，不修改压缩 bundle，不把演示数据迁入正式数据库。
+原型内容继续保留为证据；除迁移所需的静态资源相对路径归一化外，不修改压缩 bundle 的页面逻辑，也不把演示数据迁入正式数据库。
 
 ## 12. 测试与验收
 

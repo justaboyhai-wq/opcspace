@@ -74,31 +74,36 @@ PRD 中每个页面和动作都必须标注以下一种实现级别：
 apps/
 |-- admin-web/                  # Vue 3 + TypeScript 管理端源码
 `-- mini-app/                   # uni-app 微信小程序源码
-backend/
-|-- ruoyi-admin/                # 启动与管理端 API
-|-- ruoyi-framework/            # 若依框架能力
-|-- ruoyi-system/               # 用户、角色、菜单、字典、审计底座
-|-- opc-foundation/             # 园区、楼宇、空间、企业、成员主数据
-|-- opc-service/                # 报修、投诉、客服、工单与 SLA
-|-- opc-facility/               # 资产、巡检、告警、保养
-|-- opc-finance/                # 账单、支付、充值、发票、对账
-|-- opc-leasing/                # 租赁、合同、续租、装修、承包商
-|-- opc-operation/              # 空间预约、访客、停车、通行凭证
-|-- opc-content/                # 公告、活动、Banner、企业服务
-|-- opc-governance/             # 审批、消息、配置发布、AI 草稿
-`-- opc-integration/            # 微信、支付、发票、门禁、IoT 适配器
-packages/
-|-- api-contracts/              # OpenAPI 生成的客户端和 DTO
-|-- domain-vocabulary/          # 状态、事件、错误码、权限码
-`-- design-tokens/              # 颜色、间距、字体等跨端设计变量
-infra/
-|-- compose/                    # 本地 MySQL、Redis、对象存储
+services/
+`-- backend/
+    |-- ruoyi-admin/            # 启动与管理端 API
+    |-- ruoyi-framework/        # 若依框架能力
+    |-- ruoyi-system/           # 用户、角色、菜单、字典、审计底座
+    |-- opc-foundation/         # 园区、楼宇、空间、企业、成员主数据
+    |-- opc-service/            # 报修、投诉、客服、工单与 SLA
+    |-- opc-facility/           # 资产、巡检、告警、保养
+    |-- opc-finance/            # 账单、支付、充值、发票、对账
+    |-- opc-leasing/            # 租赁、合同、续租、装修、承包商
+    |-- opc-operation/          # 空间预约、访客、停车、通行凭证
+    |-- opc-content/            # 公告、活动、Banner、企业服务
+    |-- opc-governance/         # 审批、消息、配置发布、AI 草稿
+    `-- opc-integration/        # 微信、支付、发票、门禁、IoT 适配器
+contracts/
+|-- openapi/                    # OpenAPI 契约与生成规则
+`-- vocabulary/                 # 状态、事件、错误码、权限码
+database/
 |-- migrations/                 # 数据库版本迁移
-`-- deploy/                     # 测试、预发、生产部署模板
+`-- seeds/                      # 非敏感基准字典与开发数据
+deploy/
+|-- compose/                    # 本地 MySQL、Redis、对象存储
+|-- environments/               # 非敏感环境配置样例
+`-- release/                    # 测试、预发、生产发布清单
 docs/
-|-- product/                    # PRD、角色、流程和验收
+|-- prd/                        # PRD、角色、流程和验收
 |-- architecture/               # 领域、权限、集成和部署设计
+|-- plans/                      # 开发计划与阶段规划
 `-- traceability/               # 原型 -> PRD -> API -> 表 -> 测试追踪
+prototypes/                     # 冻结双端效果页，不作为正式源码
 ```
 
 ### 3.3 目标架构
@@ -230,7 +235,7 @@ flowchart LR
 
 - [ ] 找回两个冻结点的原始源码；若无法找回，书面确认按现有原型重新实现。
 - [ ] 固定 RuoYi-Vue `springboot3` 基线提交、许可证清单、JDK、Node 和包管理器版本。
-- [ ] 创建 `backend/`、`apps/admin-web/`、`apps/mini-app/`、`packages/`、`infra/` 和 `docs/` 工程结构。
+- [x] 已建立 `services/backend/`、`apps/admin-web/`、`apps/mini-app/`、`contracts/`、`database/`、`deploy/`、`prototypes/` 和 `docs/` 工程边界；业务模块仍待创建。
 - [ ] 建立 MySQL、Redis、对象存储的本地 Compose 环境和 Flyway 基线。
 - [ ] 建立开发、测试、预发、生产配置与 Secret 注入约定。
 - [ ] 建立后端单测、前端单测、OpenAPI 契约检查、构建、安全扫描和制品发布 CI。

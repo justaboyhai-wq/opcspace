@@ -40,6 +40,17 @@ foreach ($legacyDirectory in $baseline.layout.legacyRootDirectories) {
   }
 }
 
+foreach ($forbiddenRootFile in $baseline.layout.forbiddenRootFiles) {
+  $forbiddenPath = [IO.Path]::GetFullPath((Join-Path $workspaceRoot $forbiddenRootFile))
+  if (-not $forbiddenPath.StartsWith($workspaceRoot + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
+    $failures.Add("Forbidden file escapes workspace: $forbiddenRootFile")
+    continue
+  }
+  if (Test-Path -LiteralPath $forbiddenPath) {
+    $failures.Add("Obsolete root delivery file still exists: $forbiddenRootFile")
+  }
+}
+
 if ($baseline.architecture.backendStyle -ne "modular-monolith") {
   $failures.Add("Architecture must use modular-monolith for the initial release")
 }

@@ -2,6 +2,8 @@
 
 > 状态说明：`原型证据` 表示存在演示页面/交互；`基座待建` 表示工程边界已建立但产品功能未实现；`规划` 表示 PRD 定义的后续能力。API、权限码、数据表和测试 ID 目前是设计占位，进入 v0.3 后冻结。
 
+> 原型引用的稳定事实编号见[小程序功能清单](../prd/OPCSpace-MINI-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)和[管理端功能清单](../prd/OPCSpace-ADMIN-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)；前后台关系及缺口见[逐项承接映射](../prd/OPCSpace-BUTTON-TO-BACKOFFICE-MAPPING-v0.2.md)。本矩阵中的旧原型编号后续进入 v0.3 时统一替换为 `MP-* / ADM-*`。
+
 | ID | 业务能力 | 原型证据 | PRD/动作契约 | 目标端 | 目标模块 | API 边界 | 权限/数据范围 | 关键测试 | 版本 | 当前状态 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | F-01 | 管理端登录与权限 | 管理端角色/菜单模拟 | PRD F-01 | 管理端 | 若依系统模块 | `/api/admin/v1/auth/**` | Admin 身份、菜单/API/项目范围 | 登录、停用、横纵向越权 | Alpha | 基座待建 |

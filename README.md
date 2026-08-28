@@ -8,28 +8,34 @@ OPCSpace 是“和盛大厦”双端原型的产品化工作区。根仓负责�
 
 ## 产品文档
 
-- [OPCSpace 园区服务一体化平台 PRD v0.1](docs/product/OPCSpace-PRD-v0.1.md)
-- [业务流程与动作契约 v0.1](docs/product/OPCSpace-BUSINESS-FLOWS-v0.1.md)
-- [PRD 待确认事项](docs/product/OPCSpace-PENDING-TOPICS.md)
+- [小程序原型功能全量清单 v0.2](docs/prd/OPCSpace-MINI-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)
+- [管理端原型功能全量清单 v0.2](docs/prd/OPCSpace-ADMIN-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)
+- [小程序—管理端逐项承接映射 v0.2](docs/prd/OPCSpace-BUTTON-TO-BACKOFFICE-MAPPING-v0.2.md)
+- [全业务闭环详细设计 v0.2](docs/prd/OPCSpace-FULL-CLOSED-LOOP-DETAILED-DESIGN-v0.2.md)
+- [OPCSpace 园区服务一体化平台 PRD v0.1](docs/prd/OPCSpace-PRD-v0.1.md)
+- [业务流程与动作契约 v0.1](docs/prd/OPCSpace-BUSINESS-FLOWS-v0.1.md)
+- [PRD 待确认事项](docs/prd/OPCSpace-PENDING-TOPICS.md)
 - [功能追踪矩阵](docs/traceability/feature-matrix.md)
 
-PRD 中的“原型证据”只表示冻结原型存在相应页面或交互，不代表业务已经实现。当前首期研发范围收敛为身份与主数据、报修工单黄金纵切、基础消息和审计。
+v0.2 文档先分别冻结双端原型清单，再逐项建立承接映射和闭环设计。所有“原型证据”只表示冻结原型存在相应页面或交互，不代表业务已经实现。当前首期研发范围仍收敛为身份与主数据、报修工单黄金纵切、基础消息和审计。
 
 ## 当前目录基线
 
 | 路径 | 作用 | 当前状态 |
 |---|---|---|
-| `prd-demo/mini/` | 小程序浏览器交互原型 | 冻结发布产物，仅作需求与视觉证据 |
-| `prd-demo/admin/` | 管理端交互原型 | 冻结发布产物，仅作需求与视觉证据 |
+| `prototypes/` | 双端冻结原型与统一入口 | 只作需求、视觉和交互证据，不作为正式源码 |
+| `prototypes/mini/` | 小程序浏览器交互原型 | 冻结发布产物，仅作需求与视觉证据 |
+| `prototypes/admin/` | 管理端交互原型 | 冻结发布产物，仅作需求与视觉证据 |
+| `docs/prd/` | PRD、业务流程、功能清单和闭环设计 | 产品需求权威文档边界 |
 | `apps/admin-web/` | Vue 3 + TypeScript 管理端 | 占位边界，源码尚未接入 |
 | `apps/mini-app/` | 小程序产品底座 | 根仓管理的 uni-app 源码快照；待切换 Vue 3 产品基线 |
 | `services/backend/` | 后端产品底座 | 根仓管理的 RuoYi-Vue 源码快照；待切换 Spring Boot 3 产品基线 |
 | `contracts/` | OpenAPI 与共享词汇契约 | 占位边界，尚无正式契约 |
 | `database/` | 迁移与非敏感种子数据 | 占位边界，尚无正式迁移 |
 | `deploy/` | 本地编排、环境样例与发布清单 | 占位边界，尚无部署实现 |
-| `.planning/codebase/` | 迁移前代码库事实快照 | 保留，不作为当前路径说明 |
+| `docs/codebase/initial-package-snapshot/` | 迁移前代码库事实快照 | 保留，不作为当前路径说明 |
 
-占位目录中的 README 只声明责任和准入条件，不代表对应产品能力已经实现。当前仍缺少可维护的管理端源码；不得继续开发 `prd-demo/admin/assets/` 下的压缩 bundle。
+占位目录中的 README 只声明责任和准入条件，不代表对应产品能力已经实现。当前仍缺少可维护的管理端源码；不得继续开发 `prototypes/admin/assets/` 下的压缩 bundle。
 
 ## 获取与校验工作区
 
@@ -68,14 +74,17 @@ Set-Location opcspace
 
 本次目录迁移不切换已导入源码快照的上游分支。后端仍是 Spring Boot 4.1.0 基线，移动端仍是 Vue 2/Vuex 基线；推荐分支只作为后续独立基线变更候选。
 
-## 本地 PRD 演示
+## 查看冻结原型
 
-Windows 可运行 `START-ALL.bat`，macOS 可运行 `start-all.command`。演示端口保持：
+原型统一入口为 [`prototypes/index.html`](prototypes/index.html)。原型不连接正式 API，也不代表功能已经实现。
 
-- 小程序原型：<http://localhost:18081/>
-- 管理端原型：<http://localhost:18082/>
+由于浏览器对本地 ES Module 有安全限制，需要交互预览时请把 `prototypes/` 作为站点根目录交给任意标准静态 HTTP 服务。例如本机已有 Python 时：
 
-PRD 演示仅在本地提供，不连接正式 API，也不部署到云端。
+```powershell
+py -3 -m http.server 18080 --directory prototypes
+```
+
+然后访问 <http://localhost:18080/>。仓库不再维护平台专用的启动和停止脚本。
 
 ## 安全边界
 
