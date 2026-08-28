@@ -13,11 +13,11 @@ if lsof -nP -iTCP:18082 -sTCP:LISTEN >/dev/null 2>&1; then
   exit 1
 fi
 
-python3 -m http.server 18081 --bind 127.0.0.1 --directory "$ROOT/mini-program" >/dev/null 2>&1 &
+python3 -m http.server 18081 --bind 127.0.0.1 --directory "$ROOT/prd-demo/mini" >/dev/null 2>&1 &
 echo $! > "$ROOT/tools/mini.pid"
-python3 -m http.server 18082 --bind 127.0.0.1 --directory "$ROOT/web-admin" >/dev/null 2>&1 &
+python3 -m http.server 18082 --bind 127.0.0.1 --directory "$ROOT/prd-demo/admin" >/dev/null 2>&1 &
 echo $! > "$ROOT/tools/web.pid"
 sleep 1
-open "$ROOT/打开入口.html"
+open "$ROOT/index.html"
 echo "已启动：小程序 http://localhost:18081/  管理端 http://localhost:18082/"
 echo "关闭请双击 关闭原型服务.command"

@@ -1,0 +1,25 @@
+# Local prototype runtime state
+tools/*.pid
+.superpowers/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Build and runtime output
+node_modules/
+dist/
+unpackage/
+target/
+logs/
+*.log
+services/backend/data/

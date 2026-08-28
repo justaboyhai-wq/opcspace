@@ -31,9 +31,9 @@ opcspace/
 |   `-- mini/                          # 冻结小程序手机壳原型
 |-- apps/
 |   |-- admin-web/                     # 若依 Vue3 + TypeScript 管理端
-|   `-- mini-app/                      # RuoYi-App Vue3 产品子模块
+|   `-- mini-app/                      # 小程序产品源码
 |-- services/
-|   `-- backend/                       # RuoYi-Vue Spring Boot 3 产品子模块
+|   `-- backend/                       # 后端产品源码
 |-- contracts/
 |   |-- openapi/                       # 管理端与小程序 API 契约
 |   `-- vocabulary/                    # 状态、错误码、权限码和事件名称
@@ -46,29 +46,23 @@ opcspace/
 |   `-- release/                       # 发布、回滚和制品清单
 |-- scripts/                           # 基线、构建、测试和发布入口
 |-- docs/                              # PRD、架构、追踪矩阵和运行手册
-|-- .gitmodules
 `-- workspace-baseline.json
 ```
 
 ### 2.2 根仓职责
 
-根仓是产品 Superproject，负责：
+根仓是产品工程，负责：
 
-- 锁定管理端、小程序和后端的精确提交。
+- 直接追踪管理端、小程序和后端的产品源码。
 - 保存 PRD、原型证据、OpenAPI、数据库迁移和部署定义。
 - 定义产品版本与发布清单。
 - 提供跨组件构建、测试、契约校验和发布入口。
 
 根仓不把管理端、小程序和后端合并成一个构建。三者必须能独立构建、部署和回滚。
 
-### 2.3 上游与产品远端
+### 2.3 上游来源与产品远端
 
-RuoYi-Vue 与 RuoYi-App 正式开发前建立 OPCSpace 自有 fork：
-
-- `origin` 指向 OPCSpace 团队可写产品仓。
-- `upstream` 指向若依官方只读仓。
-- 产品业务开发进入产品分支，不直接修改官方跟踪分支。
-- 上游升级使用独立提交或独立合并请求，不与业务功能混合。
+OPCSpace 使用单一产品远端。若依底座以合规源码快照导入根仓，不保存为 Git 子模块，也不公开其上游提交历史。适用的 MIT 许可证、版权与初始快照记录必须保留；后续上游同步以独立源码导入提交完成，不与业务功能混合。
 
 ## 3. 管理端设计
 
@@ -263,12 +257,12 @@ submitted
 1. 将当前 `mini-program/` 移动到 `prd-demo/mini/`。
 2. 将当前 `web-admin/` 移动到 `prd-demo/admin/`。
 3. 保留根 `index.html` 作为本地 PRD 演示入口，并更新资源路径。
-4. 将 `RuoYi-App` 子模块路径迁移到 `apps/mini-app/`，建立 Vue 3 产品分支。
-5. 将 `RuoYi-Vue` 子模块路径迁移到 `services/backend/`，建立 Spring Boot 3 产品分支。
+4. 将 RuoYi-App 源码快照导入 `apps/mini-app/`，后续建立 Vue 3 产品基线。
+5. 将 RuoYi-Vue 源码快照导入 `services/backend/`，后续建立 Spring Boot 3 产品基线。
 6. 新增 `apps/admin-web/` 若依 Vue 3 TypeScript 工程。
-7. 更新 `.gitmodules`、`workspace-baseline.json` 和基线校验脚本。
+7. 更新 `workspace-baseline.json` 和基线校验脚本，验证无嵌套 Git 元数据。
 8. 建立 `contracts/`、`database/` 和 `deploy/` 目录。
-9. 验证本地演示入口、三个正式工程构建和子模块提交锁定。
+9. 验证本地演示入口、三个正式工程构建和根仓源码追踪。
 10. 开始身份、主数据和报修工单纵切。
 
 迁移期间不删除原型内容，不修改压缩 bundle，不把演示数据迁入正式数据库。
@@ -277,7 +271,7 @@ submitted
 
 ### 12.1 基座验收
 
-- 根仓递归克隆后能恢复所有正式源码组件。
+- 根仓普通克隆后能恢复所有正式源码组件。
 - 三个正式工程可独立构建。
 - PRD 演示入口仍能本地打开双端原型。
 - 管理端可使用若依登录、部门、角色、菜单、字典和代码生成。

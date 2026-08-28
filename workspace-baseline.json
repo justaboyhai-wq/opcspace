@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "product": {
+    "name": "opcspace",
+    "version": "0.1.0-alpha.0",
+    "status": "native-foundation"
+  },
+  "layout": {
+    "approvedDirectories": [
+      "prd-demo/admin",
+      "prd-demo/mini",
+      "apps/admin-web",
+      "apps/mini-app",
+      "services/backend",
+      "contracts/openapi",
+      "contracts/vocabulary",
+      "database/migrations",
+      "database/seeds",
+      "deploy/compose",
+      "deploy/environments",
+      "deploy/release"
+    ],
+    "legacyRootDirectories": [
+      "mini-program",
+      "web-admin",
+      "RuoYi-App",
+      "RuoYi-Vue"
+    ]
+  },
+  "architecture": {
+    "backendStyle": "modular-monolith",
+    "ruoyiCloudAdopted": false,
+    "apiPrefixes": {
+      "admin": "/api/admin/v1",
+      "app": "/api/app/v1",
+      "callback": "/api/callback/v1/{provider}"
+    },
+    "backendModules": [
+      "opc-foundation",
+      "opc-service",
+      "opc-content",
+      "opc-governance"
+    ],
+    "identityDomains": {
+      "admin": {
+        "credential": "Admin JWT",
+        "audience": "admin"
+      },
+      "app": {
+        "credential": "App JWT",
+        "audience": "app"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "mini-app",
+      "path": "apps/mini-app",
+      "sourceMode": "vendored-source",
+      "upstreamSnapshot": {
+        "repository": "https://github.com/yangzongzhuan/RuoYi-App.git",
+        "branch": "master",
+        "commit": "207cb4b4566f74442b61d88435151915d3b8eb36",
+        "license": "MIT; see apps/mini-app/LICENSE"
+      },
+      "currentStack": "uni-app, Vue 2, Vuex",
+      "recommendedBranch": "vue3",
+      "recommendedCommitAtAssessment": "930d5cd6e585f78bc0a49c0587535e8904fe4be8"
+    },
+    {
+      "name": "backend",
+      "path": "services/backend",
+      "sourceMode": "vendored-source",
+      "upstreamSnapshot": {
+        "repository": "https://github.com/yangzongzhuan/RuoYi-Vue.git",
+        "branch": "master",
+        "commit": "13db1fcef36bee9ce45d2d636a1d4e8f5ed5bbc3",
+        "license": "MIT; see services/backend/LICENSE"
+      },
+      "currentStack": "RuoYi 3.9.2, Spring Boot 4.1.0, JDK 17",
+      "recommendedBranch": "springboot3",
+      "recommendedCommitAtAssessment": "a51a838b71b446ea27256900efe7ed2faa2a02fd"
+    }
+  ],
+  "missingComponents": [
+    {
+      "name": "admin-web-source",
+      "path": "apps/admin-web",
+      "recommendedStack": "Vue 3, TypeScript, Vite, Pinia, Element Plus",
+      "reason": "The approved directory contains only a placeholder README; the frozen prototype is under prd-demo/admin."
+    }
+  ],
+  "verification": {
+    "assessedAt": "2026-08-28",
+    "backendBuild": {
+      "containerImage": "maven:3.9.11-eclipse-temurin-17",
+      "command": "mvn --no-transfer-progress -DskipTests package",
+      "result": "success-after-native-migration",
+      "artifact": "services/backend/ruoyi-admin/target/ruoyi-admin.jar",
+      "testScope": "tests-skipped",
+      "verifiedAt": "2026-08-28T11:08:38Z",
+      "note": "Executed after directory migration, native-source conversion and configuration hardening; tests were intentionally skipped."
+    },
+    "mobileBuild": {
+      "result": "not-cli-reproducible",
+      "reason": "The current mini-app baseline has no root package.json and is delivered as an HBuilderX project."
+    }
+  }
+}
