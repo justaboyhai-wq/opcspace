@@ -1,8 +1,8 @@
 # OPCSpace 功能追踪矩阵
 
-> 状态说明：`原型证据` 表示存在演示页面/交互；`基座待建` 表示工程边界已建立但产品功能未实现；`规划` 表示 PRD 定义的后续能力。API、权限码、数据表和测试 ID 目前是设计占位，进入 v0.3 后冻结。
+> 状态说明：`原型证据` 表示存在演示页面/交互；`基座待建` 表示工程边界已建立但产品功能未实现；`规划` 表示 PRD 定义的后续能力。API、权限码、数据表和测试 ID 目前是设计占位，只有完成闭环评审后才能冻结。
 
-> 原型引用的稳定事实编号见[小程序功能清单](../prd/OPCSpace-MINI-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)和[管理端功能清单](../prd/OPCSpace-ADMIN-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)；前后台关系及缺口见[逐项承接映射](../prd/OPCSpace-BUTTON-TO-BACKOFFICE-MAPPING-v0.2.md)。本矩阵中的旧原型编号后续进入 v0.3 时统一替换为 `MP-* / ADM-*`。
+> 当前产品范围以[主 PRD](../prd/OPCSpace-PRD.md)为准，稳定事实编号和双端关系见[功能追溯附件](../prd/OPCSpace-FUNCTION-TRACEABILITY.md)。历史逐页原型盘点和按钮映射位于[PRD 归档](../prd/archive/README.md)；本矩阵中的旧编号仅作工程追踪历史，不覆盖当前 `MP-* / FC-* / ADM-*` 关系。
 
 | ID | 业务能力 | 原型证据 | PRD/动作契约 | 目标端 | 目标模块 | API 边界 | 权限/数据范围 | 关键测试 | 版本 | 当前状态 |
 |---|---|---|---|---|---|---|---|---|---|---|

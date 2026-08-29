@@ -8,16 +8,15 @@ OPCSpace 是“和盛大厦”双端原型的产品化工作区。根仓负责�
 
 ## 产品文档
 
-- [小程序原型功能全量清单 v0.2](docs/prd/OPCSpace-MINI-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)
-- [管理端原型功能全量清单 v0.2](docs/prd/OPCSpace-ADMIN-PROTOTYPE-FUNCTION-INVENTORY-v0.2.md)
-- [小程序—管理端逐项承接映射 v0.2](docs/prd/OPCSpace-BUTTON-TO-BACKOFFICE-MAPPING-v0.2.md)
-- [全业务闭环详细设计 v0.2](docs/prd/OPCSpace-FULL-CLOSED-LOOP-DETAILED-DESIGN-v0.2.md)
-- [OPCSpace 园区服务一体化平台 PRD v0.1](docs/prd/OPCSpace-PRD-v0.1.md)
-- [业务流程与动作契约 v0.1](docs/prd/OPCSpace-BUSINESS-FLOWS-v0.1.md)
-- [PRD 待确认事项](docs/prd/OPCSpace-PENDING-TOPICS.md)
+- [PRD 文档入口与维护规则](docs/prd/README.md)
+- [OPCSpace 产品需求主文件](docs/prd/OPCSpace-PRD.md)
+- [功能追溯与小程序—管理端联动](docs/prd/OPCSpace-FUNCTION-TRACEABILITY.md)
+- [业务闭环设计](docs/prd/OPCSpace-CLOSED-LOOP-DESIGN.md)
+- [待决策事项](docs/prd/OPCSpace-DECISIONS.md)
+- [历史 PRD 归档](docs/prd/archive/README.md)
 - [功能追踪矩阵](docs/traceability/feature-matrix.md)
 
-v0.2 文档先分别冻结双端原型清单，再逐项建立承接映射和闭环设计。所有“原型证据”只表示冻结原型存在相应页面或交互，不代表业务已经实现。当前首期研发范围仍收敛为身份与主数据、报修工单黄金纵切、基础消息和审计。
+`OPCSpace-PRD.md` 是唯一产品范围和角色基线；其他三份当前附件分别承担功能事实、闭环设计和未决问题。文件名不再携带版本号，内容修订通过文档修订历史和 Git 追踪。所有“原型证据”只表示冻结原型存在相应页面或交互，不代表业务已经实现。
 
 ## 当前目录基线
 

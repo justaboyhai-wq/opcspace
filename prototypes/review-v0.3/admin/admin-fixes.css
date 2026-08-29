@@ -1,0 +1,6 @@
+.tag-primary{color:var(--color-info);background:var(--color-info-bg);border-color:var(--color-info-border)}
+.btn-small{height:var(--control-height-sm);padding:0 var(--space-4);font-size:var(--fs-13)}
+.required{color:var(--color-danger);margin-right:2px}
+.steps .dot{width:24px;height:24px;border-radius:var(--radius-circle);border:1px solid var(--border-color);display:inline-grid;place-items:center;margin-right:var(--space-2);background:var(--bg-card)}
+.steps .done .dot{background:var(--color-primary);border-color:var(--color-primary);color:var(--text-white)}
+.steps .active .dot{border-color:var(--color-primary);color:var(--color-primary)}

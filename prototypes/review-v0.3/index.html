@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="OPCSpace v0.3 管理端与企业小程序功能联动高保真评审原型。">
+  <title>v0.3-双端功能联动 · 高保真原型</title>
+  <link rel="stylesheet" href="./assets/common.css?v=0.3.0">
+  <link rel="stylesheet" href="./assets/skill-extras.css?v=0.3.0">
+  <link rel="stylesheet" href="./review.css?v=0.3.0">
+</head>
+<body>
+  <header class="review-hero">
+    <div class="review-topline">
+      <span class="review-brand">OPCSpace</span>
+      <span class="tag tag-green">当前评审版 v0.3</span>
+    </div>
+    <h1>v0.3-双端功能联动 · 高保真原型</h1>
+    <p data-anno-id="review.hero-desc">以入驻企业小程序为业务入口，以物业管理端承接信息处理；本版先验证功能集合、页面关系和信息回显，不提前认定业务已经闭环。</p>
+    <div class="review-meta">
+      <span>项目：和盛大厦</span>
+      <span>企业：星海科技</span>
+      <span>基线：PRD v0.3</span>
+      <span>更新：2026-08-29</span>
+    </div>
+  </header>
+
+  <main class="review-page">
+    <section class="review-section">
+      <div class="section-heading">
+        <div><span class="eyebrow">双端入口</span><h2>从同一组业务数据进入两个角色视角</h2></div>
+        <a class="btn" href="../" aria-label="返回原型中心">返回原型中心</a>
+      </div>
+      <div class="entry-grid">
+        <a class="entry-card admin-entry" href="./admin/">
+          <span class="entry-no">01</span>
+          <span class="tag tag-blue">桌面端 · 1366px</span>
+          <h3>物业管理端</h3>
+          <p>招商、财务、运营、内容和超级管理员五类责任族，以及统一待办、审批、客服、消息和审计能力。</p>
+          <div class="entry-points"><span>五类责任族</span><span>共用治理</span><span>跨端回显</span></div>
+          <strong>进入管理端评审 →</strong>
+        </a>
+        <a class="entry-card mini-entry" href="./mini/">
+          <span class="entry-no">02</span>
+          <span class="tag tag-green">小程序 · 390×844</span>
+          <h3>入驻企业小程序</h3>
+          <p>覆盖 22 条功能联动集合和 52 个稳定入口编号，保留访客通行硬件，移除物业工程与巡检范围。</p>
+          <div class="entry-points"><span>企业服务入口</span><span>进度与记录</span><span>消息反馈</span></div>
+          <strong>进入小程序评审 →</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="review-section scope-section">
+      <div class="section-heading"><div><span class="eyebrow">本版口径</span><h2>范围边界</h2></div></div>
+      <div class="scope-grid">
+        <article class="scope-card keep"><h3>保留</h3><ul><li>普通报修与运营服务</li><li>访客二维码、门禁授权、闸机核销与人工放行</li><li>停车和电费的业务、账户及账务信息</li></ul></article>
+        <article class="scope-card remove"><h3>不进入当前产品</h3><ul><li>设备台账、设备详情和设备告警</li><li>物业巡检、维保计划和施工每日巡检</li><li>BA、传感器、停车控制和电表设备管理</li></ul></article>
+        <article class="scope-card stage"><h3>当前评审重点</h3><ul><li>每个小程序入口是否有信息处理位置</li><li>管理端处理信息是否能返回小程序</li><li>缺口保留为待确认，不补造业务规则</li></ul></article>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <div class="section-heading"><div><span class="eyebrow">演示主线</span><h2>六条跨端信息联动</h2></div></div>
+      <div class="flow-grid">
+        <article><b>01</b><h3>报修服务</h3><p>小程序提交 → 运营受理处理 → 进度与评价入口回显</p></article>
+        <article><b>02</b><h3>访客通行</h3><p>企业邀请 → 管理审批与门禁授权 → 闸机/人工核销记录回显</p></article>
+        <article><b>03</b><h3>财务缴费</h3><p>账单与回单 → 财务匹配入账 → 缴费和发票状态回显</p></article>
+        <article><b>04</b><h3>空间预约</h3><p>选择资源时段 → 运营处理冲突 → 预约凭证和取消结果回显</p></article>
+        <article><b>05</b><h3>招商协同</h3><p>续租/装修申请 → 招商查看材料与节点 → 办理进度回显</p></article>
+        <article><b>06</b><h3>内容发布</h3><p>公告/活动/服务发布 → 定向企业 → 首页、消息和频道展示</p></article>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <div class="section-heading"><div><span class="eyebrow">版本管理</span><h2>版本变更记录</h2></div></div>
+      <div class="legend"><span class="tag tag-green">新增</span><span class="tag tag-orange">修改</span><span class="tag tag-red">删除</span></div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead><tr><th>版本号</th><th>时间</th><th>类型</th><th>涉及页面</th><th>变更内容摘要</th></tr></thead>
+          <tbody>
+            <tr><td><strong>v0.3</strong></td><td>2026-08-29</td><td><span class="tag tag-green">新增</span></td><td><a href="./admin/">管理端</a>、<a href="./mini/">小程序</a></td><td>按统一 PRD 重建双端功能集合与信息联动评审原型。</td></tr>
+            <tr><td>v0.2</td><td>2026-08-28</td><td><span class="tag tag-red">删除</span></td><td>旧版原型范围</td><td>设备、巡检、维保和通用硬件控制不再进入当前产品；访客通行硬件作为例外保留。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="review-section prd-summary">
+      <div class="section-heading"><div><span class="eyebrow">需求摘要</span><h2>PRD 摘要</h2></div></div>
+      <div class="summary-grid">
+        <article><h3>一、产品背景与目标</h3><p>OPCSpace 面向入驻企业与园区物业运营团队，用小程序承载服务申请和信息查看，用管理端承接信息处理与内容运营。</p></article>
+        <article><h3>二、用户角色与场景</h3><p>企业成员、企业管理员和访客从小程序进入；招商、财务、运营、内容和超级管理员在管理端按责任处理信息。</p></article>
+        <article><h3>三、核心痛点与价值</h3><p>把原型中分散的按钮和后台页面建立可追溯关系，识别真实承接位置与缺口，为下一阶段逐业务闭环评审提供统一事实。</p></article>
+      </div>
+      <p class="permission-note">系统权限说明：角色责任、数据范围与操作权限以 <a href="../../docs/prd/OPCSpace-PRD.md">当前 PRD 的管理端角色族</a>及管理端“角色权限”页面为统一维护入口。</p>
+    </section>
+
+    <div class="proto-note">
+      <div class="note-hint">— 以下为原型设计说明，不在实际产品页面中显示 —</div>
+      <div class="card" data-anno-id="review.note-1">本入口只负责双端评审导航、范围说明和版本追溯。具体页面中的按钮、状态和演示数据不代表正式接口、审批规则或业务闭环已经实现。</div>
+    </div>
+  </main>
+
+  <script src="./data/annotations.js?v=0.3.0"></script>
+  <script src="./assets/common.js?v=0.3.0"></script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OPCSpace 冻结双端原型</title>
+  <title>OPCSpace 双端原型中心</title>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 32px; background: #f4f7f6; color: #17352d; font-family: "Microsoft YaHei", system-ui, sans-serif; }
@@ -12,6 +12,10 @@
     h1 { margin: 0; color: #06473b; font-size: 32px; }
     header p { margin: 9px 0 0; color: #75857f; }
     .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .current { grid-column: 1 / -1; min-height: 190px; background: linear-gradient(135deg, #06473b, #0b7d6a); color: white; border: 0; }
+    .current p, .current strong { color: rgba(255,255,255,.82); }
+    .current .tag { background: rgba(255,255,255,.16); color: white; }
+    .archive-title { margin: 28px 0 12px; color: #75857f; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
     a { display: block; min-height: 220px; padding: 26px; border: 1px solid #dfe8e4; border-radius: 18px; background: white; color: inherit; text-decoration: none; box-shadow: 0 12px 36px rgba(25, 62, 52, .08); transition: transform .18s, box-shadow .18s; }
     a:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(25, 62, 52, .14); }
     .tag { display: inline-block; padding: 5px 9px; border-radius: 999px; background: #edf5f2; color: #0b5b4a; font-size: 12px; font-weight: 700; }
@@ -24,7 +28,13 @@
 </head>
 <body>
   <main>
-    <header><h1>OPCSpace 冻结双端原型</h1><p>以下页面只作为需求、视觉和交互证据，不代表正式功能已经实现。</p></header>
+    <header><h1>OPCSpace 双端原型中心</h1><p>当前评审版用于核对 PRD、功能集合和双端信息联动；旧版继续作为历史视觉与交互证据。</p></header>
+    <section class="grid">
+      <a class="current" href="./review-v0.3/">
+        <span class="tag">Current Review · v0.3</span><h2>最新双端功能联动评审原型</h2><p>按照 PRD v0.3 重建管理端与企业小程序，聚焦 22 条功能联动集合、五类管理角色责任和访客通行硬件例外。</p><strong>打开最新评审版 →</strong>
+      </a>
+    </section>
+    <div class="archive-title">历史冻结原型</div>
     <section class="grid">
       <a href="./mini/" target="_blank" rel="noreferrer">
         <span class="tag">Frozen Prototype</span><h2>小程序原型</h2><p>展示访客、报修、账单、空间、活动、AI 管家等产品意图，不连接正式 API。</p><strong>打开小程序原型 →</strong>
@@ -33,7 +43,7 @@
         <span class="tag">Frozen Prototype</span><h2>管理端原型</h2><p>展示运营总览、工单、企业、空间、账单、活动及系统管理意图，不代表已实现能力。</p><strong>打开管理端原型 →</strong>
       </a>
     </section>
-    <footer>原型数据均为演示数据；正式工程位于 apps/ 与 services/，本目录禁止继续开发业务功能。</footer>
+    <footer>全部原型数据均为演示数据；正式产品源码仍位于 apps/ 与 services/，原型不代表已实现能力。</footer>
   </main>
 </body>
 </html>

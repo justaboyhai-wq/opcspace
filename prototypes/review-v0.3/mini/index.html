@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#007D7B">
+  <title>OPCSpace v0.3 小程序原型</title>
+  <link rel="stylesheet" href="../assets/common.css?v=0.3.0">
+  <link rel="stylesheet" href="../assets/skill-extras.css?v=0.3.0">
+  <link rel="stylesheet" href="mini.css?v=0.3.0">
+</head>
+<body>
+  <main class="prototype-stage" aria-label="OPCSpace 小程序高保真原型">
+    <section class="phone-shell">
+      <div class="status-bar" aria-hidden="true"><strong>09:41</strong><span>◒ ◉ 100%</span></div>
+      <header class="mini-header">
+        <button class="icon-button header-back" type="button" data-action="back" aria-label="返回">‹</button>
+        <div class="header-copy">
+          <div class="header-title" id="page-title">OPCSpace</div>
+          <div class="header-context">和盛大厦 · 星海科技</div>
+        </div>
+        <button class="icon-button" type="button" data-action="open-more" aria-label="更多操作">•••</button>
+      </header>
+
+      <div class="mini-scroll" id="app-view" tabindex="-1"></div>
+
+      <button class="ai-fab" type="button" data-route="ai-assistant" aria-label="打开 AI 管家">
+        <span>AI</span><small>管家</small>
+      </button>
+
+      <nav class="bottom-nav" aria-label="一级导航">
+        <button type="button" data-route="home" data-tab="home"><span>⌂</span><em>首页</em></button>
+        <button type="button" data-route="services" data-tab="services"><span>▦</span><em>服务</em></button>
+        <button type="button" data-route="ai-hub" data-tab="ai"><span>✦</span><em>AI</em></button>
+        <button type="button" data-route="profile" data-tab="profile"><span>◉</span><em>我的</em></button>
+      </nav>
+    </section>
+  </main>
+
+  <div class="sheet-mask" id="sheet-mask" hidden>
+    <section class="action-sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+      <div class="sheet-handle"></div>
+      <h2 id="sheet-title">更多操作</h2>
+      <div id="sheet-body"></div>
+      <button class="sheet-cancel" type="button" data-action="close-sheet">取消</button>
+    </section>
+  </div>
+
+  <div class="dialog-mask" id="dialog-mask" hidden>
+    <section class="mini-dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <div class="dialog-icon" id="dialog-icon">!</div>
+      <h2 id="dialog-title">确认操作</h2>
+      <p id="dialog-message"></p>
+      <div class="dialog-actions">
+        <button type="button" data-action="cancel-dialog">取消</button>
+        <button class="dialog-confirm" type="button" data-action="confirm-dialog">确认</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/annotations.js?v=0.3.0"></script>
+  <script src="data/screens.js?v=0.3.0"></script>
+  <script src="../assets/common.js?v=0.3.0"></script>
+  <script src="mini.js?v=0.3.0"></script>
+</body>
+</html>
